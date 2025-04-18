@@ -36,6 +36,6 @@ async def main():
     print("Бот запущен!")
     await app.run_polling()
 
-if name == '__main__':
+if __name__ == '__main__':
     import asyncio
     asyncio.run(main())
