@@ -37,5 +37,17 @@ async def main():
     await app.run_polling()
 
 if __name__ == '__main__':
-    import asyncio
-    asyncio.run(main())
+    from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler
+    import os
+
+    # Создание приложения с токеном
+    app = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
+
+    # Регистрируем обработчики
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CallbackQueryHandler(button_click))
+
+    print("Бот запущен!")
+    
+    # Запуск бота
+    app.run_polling()
