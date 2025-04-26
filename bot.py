@@ -38,5 +38,5 @@ async def main():
     await app.run_polling()
 
 # Запуск бота
-if name == '__main__':
+if __name__ == '__main__':
     asyncio.run(main())  # Эта строка запускает цикл, и бот будет работать 24/7
