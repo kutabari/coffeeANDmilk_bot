@@ -2,14 +2,15 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 import random
 import os
+import asyncio
 
 # МИЛЫЕ СООБЩЕНИЯ
 MESSAGES = [
-    "Ты мой солнечный лучик даже в самый серый день.",
-    "Обожаю тебя всем сердцем.",
-    "Ты — как глоток теплого какао зимой.",
-    "Обнять бы тебя сейчас, и не отпускать.",
-    "Спасибо, что ты у меня есть."
+    "ты мой солнечный лучик даже в самый серый день.",
+    "обожаю тебя всем сердцем.",
+    "ты — как глоток теплого какао зимой.",
+    "обнять бы тебя сейчас, и не отпускать.",
+    "cпасибо, что ты у меня есть."
 ]
 
 # ОБРАБОТКА /start
@@ -27,7 +28,7 @@ async def button_click(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ЗАПУСК БОТА
 async def main():
-    token = os.getenv("BOT_TOKEN")  # Получаем токен из переменной окружения
+    token = os.getenv("7759460115:AAH7ZlMe_LZRPekIV6DcVaHKKLjVS_qYuXU")  # Получаем токен из переменной окружения
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler("start", start))
@@ -35,5 +36,7 @@ async def main():
 
     print("Бот запущен!")
     await app.run_polling()
-import asyncio
-asyncio.get_event_loop().create_task(main())
+
+# Запуск бота
+if name == '__main__':
+    asyncio.run(main())  # Эта строка запускает цикл, и бот будет работать 24/7
