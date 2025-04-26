@@ -28,7 +28,7 @@ async def button_click(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ЗАПУСК БОТА
 async def main():
-    token = os.getenv("7759460115:AAH7ZlMe_LZRPekIV6DcVaHKKLjVS_qYuXU")  # Получаем токен из переменной окружения
+    token = os.getenv("BOT_TOKEN")  # Получаем токен из переменной окружения
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler("start", start))
